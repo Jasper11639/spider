@@ -14,11 +14,15 @@ class ZhihuUserSpiderMiddleware(object):
     # passed objects.
 
     @classmethod
+   
+
     def from_crawler(cls, crawler):
-        # This method is used by Scrapy to create your spiders.
-        s = cls()
-        crawler.signals.connect(s.spider_opened, signal=signals.spider_opened)
-        return s
+       # This method is used by Scrapy to create your spiders.
+       s = cls()
+       crawler.signals.connect(s.spider_opened, signal=signals.spider_opened)
+       return s
+
+
 
     def process_spider_input(response, spider):
         # Called for each response that goes through the spider
